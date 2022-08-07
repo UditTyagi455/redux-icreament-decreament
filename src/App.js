@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import "./App.css";
+import {Increament,Decreament} from "./action/action"
+import {useSelector,useDispatch} from "react-redux"
 
-function App() {
+const App = () => {
+
+  const myState = useSelector((state) => state.reducerFun);
+  const dispatch = useDispatch();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='mainclass'>
+      <h1>Increament and Decreament</h1>
+      <div className='workfield'>
+        <button onClick={() => dispatch(Decreament())}>-</button>
+        <input type="text" value={myState}/>
+        <button onClick={() => dispatch(Increament())}>+</button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

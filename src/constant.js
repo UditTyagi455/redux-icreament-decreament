@@ -1,0 +1,2 @@
+export const INCREAMENT = "INCREAMENT THE VALUE" ;
+export const DECREAMENT = "DECREAMENT THE VALUE" ;
